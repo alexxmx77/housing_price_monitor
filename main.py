@@ -5,7 +5,7 @@ import argparse
 
 from monitor import Monitor
 
-# doc: python main.py --city=paris
+# doc: python main.py --city=BAB
 
 if __name__ == '__main__':
 
@@ -19,14 +19,12 @@ if __name__ == '__main__':
 	# for city_data in config['data']: # TODO
 	city_data = config['data']
 	city_data = [item for item in city_data if item['city'] == args.city][0]
-	# paris = Monitor(city_data[0])
-	# idf = Monitor(city_data[1])
-	paris = Monitor(city_data)
+	# BAB = Monitor(city_data[0])
+	BAB = Monitor(city_data)
 
-	paris.init_posts()
+	BAB.init_posts()
 	# idf.init_posts()
 	
 	while True:	
-		paris.monitor_change()
-		# idf.monitor_change() 
+		BAB.monitor_change()
 		time.sleep(60 * city_data['frequency'])
