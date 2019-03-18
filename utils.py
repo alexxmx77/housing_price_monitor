@@ -110,7 +110,7 @@ def init_driver(browser='firefox', debug=False):
 search_data = get_config()
 searches = [item['city'] for item in search_data]
 search_data = {searches[i]: [item for item in search_data if item['city'] == searches[i]][0] for i in range(len(searches))}
-BROWSER = search_data['paris']['browser']
+BROWSER = search_data['BAB']['browser']
 
 driver = init_driver(browser=BROWSER)
 
